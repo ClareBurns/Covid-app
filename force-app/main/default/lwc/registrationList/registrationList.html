@@ -1,5 +1,19 @@
 <template>
-     <lightning-card title="Lightning Web Component" icon-name="custom:custom14">
+    <lightning-card title="Registration List" icon-name="custom:custom14" >
+        <template if:true={registrations.data}>
+            <lightning-datatable
+                key-field="Id"
+                data={registrations.data}
+                columns={columns}
+                onrowselection={getSelectedName}
+            >
+           </lightning-datatable>
+        </template>
+  </lightning-card>
+</template>
+
+<!--
+  <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-p-around_medium">
 		<thead>
     <tr class="slds-line-height_reset">
       <th class="" scope="col">
@@ -16,5 +30,9 @@
       </th>
     </tr>
   </thead>
-	</lightning-card>
-</template>
+  <tbody>
+  <template for:each={registrations} for:item="registration">
+  <c-registration-list-item key={registration} firstName={registration.Name} lastName={registration.Last_Name__c}> </c-registration-list-item>
+  </template>
+  </tbody>
+  </table> -->

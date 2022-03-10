@@ -1,7 +1,50 @@
 <template>
-    <lightning-card title="Lightning Web Component" icon-name="custom:custom14">
-		<div class="slds-var-m-around_medium">
-			<h2>Hello World!</h2>
-		</div>
-	</lightning-card>
+    <lightning-card title="Add Registration" icon-name="custom:custom14">
+		 <lightning-record-edit-form
+            object-api-name={objectApiName}
+            onsuccess={handleSuccess}
+        >
+            <div class="slds-p-left_small slds-p-right_small">
+                <lightning-input-field field-name={firstNameField}> </lightning-input-field>
+                <lightning-input-field field-name={lastNameField}> </lightning-input-field>
+                <lightning-input-field field-name={dateField}> </lightning-input-field>
+                <lightning-input-field field-name={statusField}> </lightning-input-field>
+            </div>
+            <div class="slds-var-m-top_medium slds-p-left_medium buttons slds-p-right_small">
+                <lightning-button class="slds-p-right_medium" variant="brand-outline" type="reset" label="Cancel" onclick={handleCancel}>
+                </lightning-button>
+				<lightning-button variant="brand" type="submit" label="Create">
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+	</lightning-card> 
 </template>
+
+
+<!--
+<div class="slds-p-around_large">
+<lightning-input type="text"
+	class="slds-var-m-bottom_small"
+	label="First Name"
+	value={FirstName}>
+</lightning-input>
+<lightning-input type="text"
+	class="slds-var-m-bottom_small"
+	label="Last Name"
+	value={LastName}>
+</lightning-input>
+<lightning-input type="date"
+	class="slds-var-m-bottom_small"
+	label="Date"
+	value={Date}>
+</lightning-input>
+<lightning-input type="picklist"
+	class="slds-var-m-bottom_small"
+	label="Status"
+	value={Status}>
+</lightning-input>
+    <div class="slds-var-m-vertical_medium">
+        <lightning-button variant="brand" class="slds-float_right" type="submit" label="Submit">
+        </lightning-button>
+    </div>
+	</div>*/ -->

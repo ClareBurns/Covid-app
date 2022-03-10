@@ -6,33 +6,15 @@ import LAST_NAME_FIELD from '@salesforce/schema/Registration__c.Last_Name__c';
 import DATE_FIELD from '@salesforce/schema/Registration__c.Date__c';
 import STATUS_FIELD from '@salesforce/schema/Registration__c.Dose_Status__c';
 
-export default class AddRegistration extends LightningElement {
+export default class EditRegistration extends LightningElement {
     objectApiName = REGISTRATION_OBJECT; 
-    firstNameField = FIRST_NAME_FIELD;
-    lastNameField = LAST_NAME_FIELD;
-    dateField = DATE_FIELD;
-    statusField = STATUS_FIELD; 
-
-
-    resetForm() {
-        let inputFields = this.template.querySelectorAll('lightning-input-field');
-        if (inputFields) {
-            inputFields.forEach(field=> {field.reset(); }); 
-        }
-    }
-
+    fields = [FIRST_NAME_FIELD, LAST_NAME_FIELD, DATE_FIELD, STATUS_FIELD]; 
     handleSuccess(event) {
         const toastEvent = new ShowToastEvent({
-            title: "Registration created",
+            title: "Registration edited",
             message: "Thank you",
             variant: "success"
         })
         this.dispatchEvent(toastEvent); 
-        this.resetForm(); 
-        this.dispatchEvent(new CustomEvent('update'));
-    }
-
-    handleCancel(event) {
-        this.resetForm(); 
     }
 }

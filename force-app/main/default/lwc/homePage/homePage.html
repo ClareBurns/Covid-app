@@ -1,13 +1,14 @@
 <template>
 <div class="slds-grid">
-  <div class="slds-col slds-p-horizontal_medium">
+  <div class="slds-col slds-size_8-of-12 slds-p-horizontal_medium">
     <span>
-        <c-registration-List> </c-registration-List>
+        <c-registration-list> </c-registration-list>
 </span>
 </div>
-  <div class="slds-col slds-p-horizontal_medium">
+  <div class="slds-col slds-size_4-of-12 slds-p-horizontal_medium">
     <span>
-        <c-add-registration> </c-add-registration>
+        <c-add-registration onupdate={handleUpdate}> </c-add-registration>
+        <c-edit-registration> </c-edit-registration>
 </span>
   </div>
 </div>
